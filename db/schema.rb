@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707120319) do
+ActiveRecord::Schema.define(version: 20150707122706) do
 
   create_table "goods", force: :cascade do |t|
     t.string   "article",    default: "", null: false
@@ -19,5 +19,8 @@ ActiveRecord::Schema.define(version: 20150707120319) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  add_index "goods", ["article"], name: "index_goods_on_article", unique: true
+  add_index "goods", ["name"], name: "index_goods_on_name", unique: true
 
 end
