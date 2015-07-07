@@ -1,0 +1,9 @@
+<h1>Goods#index</h1>
+<p>Find me in app/views/goods/index.html.erb</p>
+
+<%= @goods.count %>
+<ul>
+  <% @goods.each do |g| %>
+    <li><%= g.name %></li>
+  <% end %>
+</ul>
