@@ -24,7 +24,7 @@ end
   article = generate_article i + 1
   params = {
     article: article,
-    name: "Name of #{ article }".delete('-')
+    name: "Наззвание товара #{ article }".delete('-')
   }
   Good.create params
 end

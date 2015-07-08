@@ -12,7 +12,7 @@ class Good < ActiveRecord::Base
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
       indexes :article, analyzer: 'english', index_options: 'offsets'
-      indexes :name,    analyzer: 'english', index_options: 'offsets'
+      indexes :name,    analyzer: 'russian', index_options: 'offsets'
     end
   end
 
