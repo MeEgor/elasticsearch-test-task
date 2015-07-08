@@ -1,9 +1,11 @@
+= errors_for good
+
 = form_for good do |f|
   .form-group
     = f.label :article
-    = f.text_field :article
+    = f.text_field :article, class: 'form-control'
   .form-group
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, class: 'form-control'
   .form-group
-    = f.submit 
+    = f.submit 'Create', class: 'btn btn-primary'
