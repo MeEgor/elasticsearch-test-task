@@ -1,0 +1,21 @@
+h2  Search
+= form_tag '/goods', method:'GET'
+  = text_field_tag :q, params[:q], placeholder:'search...'
+  = submit_tag 'Search'
+
+h2 All goods
+= link_to '+ new', new_good_path
+
+- if @goods.any?
+  ul#goods_list
+    - @goods.each do |good|
+      li 
+        = "#{ good.article }: #{ good.name }"
+        '
+        = link_to 'delete', good_path(good), data: { method:'delete', confirm:'Are you shure?'}
+
+- else 
+  p There is no goods for your query..
+  p 
+    ' But you can add new one
+    = link_to 'here', new_good_path

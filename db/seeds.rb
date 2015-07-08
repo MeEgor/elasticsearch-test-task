@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# populate generator
+# populate scripts
 def gc i
   chars = %w{a b c d e f g h i j k l m n o p q r s t w v x y z}
   i >= 0 ? chars[i] : ''
@@ -17,11 +17,11 @@ def nts i
 end
 
 def generate_article i
-  "#{ gc(i / 99) }-#{ gc(i / 99 - 1)  }#{ nts(i % 99) }".upcase
+  "#{ gc(i / 100) }-#{ gc(i / 100 - 1)  }#{ nts(i % 100) }".upcase
 end
 
-300.times do |i|
-  article = generate_article i
+1000.times do |i|
+  article = generate_article i + 1
   params = {
     article: article,
     name: "Name of #{ article }".delete('-')
